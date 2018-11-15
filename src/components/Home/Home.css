@@ -1,0 +1,10 @@
+#soilWater {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100vh;
+  background-color: #ededef;
+  background-image: url('../../images/soilandwaterrs.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}

@@ -1,0 +1,54 @@
+#navbar {
+   position: fixed;
+    background-color: #94B1A7;
+    width: 75%;
+    height: 100%;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    transform: translateX(-150px);
+    transition: transform 200ms ease-in;
+    font-family: "Krona One", sans-serif;
+    font-size: 28px;
+}
+
+#navbar.slideIn {
+    transform: translateX(0);
+}
+
+#navbar.slideOut {
+    transform: translateX(100%);
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0px;
+    margin-top: 15px;
+}
+
+li {
+    padding-left: 40px;
+    line-height: 50px;
+}
+
+a {
+    color: #f1f1f1;
+    text-decoration: none;
+    text-align: left;
+}
+
+button {
+    align-items: flex-end;
+}
+
+.XToClose {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.theX {
+    margin-right: 20px;
+}

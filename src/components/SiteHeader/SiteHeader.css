@@ -1,0 +1,11 @@
+.containImage {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    padding: 0 5vw 0 5vw;
+    border-bottom: 1px solid #ededef;
+    background-color: #ffffff;
+}
+
