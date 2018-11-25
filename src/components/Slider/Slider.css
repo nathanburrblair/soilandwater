@@ -3,7 +3,7 @@
     height: 500px;
     position: relative;
     margin: 0 auto;
-    padding-top: 5vh;
+    top: 10vh;
     overflow: hidden;
     white-space: nowrap;
 }

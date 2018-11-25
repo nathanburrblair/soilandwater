@@ -6,10 +6,16 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.8",
     "@fortawesome/free-solid-svg-icons": "^5.5.0",
     "@fortawesome/react-fontawesome": "^0.1.3",
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "massive": "^5.5.3",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.1",
+    "react-scripts": "^2.1.1",
     "styled-components": "^4.0.3"
   },
   "scripts": {
@@ -18,6 +24,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "main": "server/server.js",
+  "proxy": "http://localhost:4900",
   "eslintConfig": {
     "extends": "react-app"
   },
