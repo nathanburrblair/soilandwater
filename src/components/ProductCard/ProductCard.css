@@ -1,0 +1,12 @@
+.card {
+    border: 1px black solid;
+    margin: 0 10px 10px 10px;
+}
+
+h1 { 
+    margin-top: 0px;
+}
+
+.product_image {
+    width: 90%;
+}

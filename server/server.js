@@ -25,6 +25,8 @@ app.use(session({
 }))
 
 app.get('/api/plants', controller.getPlants)
+app.get('/api/plants/:product_category', controller.getPlantsByCat)
+app.get('/api/plants/:product_category/:id', controller.getPlantById)
 
 app.listen(SERVER_PORT, () => {
     console.log(`The magic is happening on port ${SERVER_PORT}`)

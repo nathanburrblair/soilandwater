@@ -47,7 +47,6 @@ class Slider extends Component {
   };
 
   render() {
-    console.log("state", this.state);
     return (
       <div className="slider">
         <div

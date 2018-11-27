@@ -8,10 +8,14 @@ import Containers from './components/Containers/Containers';
 import MainNav from './components/MainNav/MainNav';
 import Slider from './components/Slider/Slider';
 import LeftArrow from './components/Arrows/LeftArrow';
+import PlantCategories from './components/PlantCategories/PlantCategories';
+import ProductPage from './components/ProductPage/ProductPage';
 
 export default <Switch>
     <Route exact path='/' component={Home} />
-    <Route path="/plants" component={Plants} />
+    <Route exact path="/plants" component={Plants} />
+    <Route exact path="/plants/:category" component={PlantCategories} />
+    <Route path="/plants/:category/:id" component={ProductPage} />
     <Route path="/containers" component={Containers} />
     <Route path="/design" component={Design} />
     <Route path="/mainnav" component={MainNav} />

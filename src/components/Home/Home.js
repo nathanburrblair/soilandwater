@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./Home.css";
 import styled from "styled-components";
-import hero from "../../images/soilandwaterrs.jpg";
 import plantsbg from "../../images/plantsbg.jpg";
 import containerbg from "../../images/containerbgdark.jpg";
 import designbg from "../../images/designbg1.jpg";
@@ -35,17 +34,6 @@ const DesignSubtitle = styled.h2`
   color: #353535;
   text-transform: uppercase;
   margin-top: 0px;
-`;
-
-const SectionOne = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 90vh;
-  background-color: #ededef;
-  background-image: url(${hero});
-  background-repeat: no-repeat;
-  background-size: cover;
 `;
 
 const SectionTwo = styled.section`

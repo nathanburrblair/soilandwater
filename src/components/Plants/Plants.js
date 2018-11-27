@@ -3,6 +3,7 @@ import "./Plants.css";
 import Slider from "../Slider/Slider";
 import axios from "axios";
 import Plant from '../../components/Plant/Plant';
+import {Link} from 'react-router-dom';
 
 class Plants extends Component {
   constructor (props) {
@@ -40,9 +41,9 @@ class Plants extends Component {
         <div className="all_plant_list">
           {displayAllPlants}
         </div>
-        <li>Orchids</li>
-        <li>Succulents</li>
-        <li>Bonsai</li>
+        <Link to="/plants/orchid"><li>Orchids</li></Link>
+        <Link to="/plants/succulent"><li>Succulents</li></Link>
+        <Link to="/plants/bonsai"><li>Bonsai</li></Link>
       </div>
     );
   }
