@@ -32,6 +32,7 @@ class ProductPage extends Component {
            <div className="single_product">
              <img className="prod_image" src={prod.product_image} alt=""/>
              <h1>{prod.name}</h1>
+             <h3>{prod.price}</h3>
              {prod.product_description}
            </div>
         )

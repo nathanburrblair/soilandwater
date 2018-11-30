@@ -2,7 +2,6 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
-const axios = require('axios');
 const massive = require('massive');
 const controller = require('./controller.js');
 
@@ -16,7 +15,12 @@ const {
     SESSION_SECRET
 } = process.env;
 
-massive(CONNECTION_STRING).then(db => app.set('db', db));
+massive(CONNECTION_STRING).then(db => {
+    app.set('db', db)
+    app.listen(SERVER_PORT, () => {
+        console.log(`The magic is happening on port ${SERVER_PORT}`)
+    })
+})
 
 app.use(session({
     secret: SESSION_SECRET,
@@ -27,7 +31,4 @@ app.use(session({
 app.get('/api/plants', controller.getPlants)
 app.get('/api/plants/:product_category', controller.getPlantsByCat)
 app.get('/api/plants/:product_category/:id', controller.getPlantById)
-
-app.listen(SERVER_PORT, () => {
-    console.log(`The magic is happening on port ${SERVER_PORT}`)
-})
+app.post('/api/plants/:product_category', controller.addPlant)
