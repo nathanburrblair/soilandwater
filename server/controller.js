@@ -42,12 +42,14 @@ module.exports = {
     let {
       name,
       price,
-      product_description
+      product_description,
+      product_category
     } = req.body;
     db.add_plant({
         name,
         price,
-        product_description
+        product_description,
+        product_category
     })
     .then(response => {
         res.status(200).send(response)

@@ -10,9 +10,9 @@ class Slider extends Component {
 
     this.state = {
       images: [
-        "https://s3-us-west-1.amazonaws.com/nathan-blair-devmtn-personal-project/plants1rs.jpg",
-        "https://s3-us-west-1.amazonaws.com/nathan-blair-devmtn-personal-project/plants2rs.jpg",
-        "https://s3-us-west-1.amazonaws.com/nathan-blair-devmtn-personal-project/plants3rs.jpg"
+        "https://s3-us-west-1.amazonaws.com/nathan-blair-devmtn-personal-project/greenplants1rs.png",
+        "https://s3-us-west-1.amazonaws.com/nathan-blair-devmtn-personal-project/greenplants2rs.jpg",
+        "https://s3-us-west-1.amazonaws.com/nathan-blair-devmtn-personal-project/greenplants3rs.jpg"
       ],
       currentIndex: 0,
       translateValue: 0
@@ -49,6 +49,12 @@ class Slider extends Component {
   render() {
     return (
       <div className="slider">
+        <div className="some_text">
+        <h1>Plants</h1>
+          <p>
+            We specilize in succulents, orchids, and bonsai trees.
+          </p>
+        </div>
         <div
           className="slider-wrapper"
           style={{

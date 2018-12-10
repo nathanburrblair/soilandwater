@@ -7,8 +7,12 @@ class ProductPage extends Component {
     super(props);
 
     this.state = {
-      product: []
+      product: [],
+      editToggle: false
     };
+
+    this.handleEditToggle = this.handleEditToggle.bind(this);
+    this.handleConfirmDetails = this.handleConfirmDetails.bind(this);
   }
 
   componentDidMount() {
@@ -19,30 +23,98 @@ class ProductPage extends Component {
         }`
       )
       .then(response => {
-          console.log('le response', response)
+        console.log("le response", response);
         this.setState({
           product: response.data
         });
       });
   }
 
-  render() {
-    let singleProduct = this.state.product.map((prod, i) => {
-        return (
-           <div className="single_product">
-             <img className="prod_image" src={prod.product_image} alt=""/>
-             <h1>{prod.name}</h1>
-             <h3>{prod.price}</h3>
-             {prod.product_description}
-           </div>
-        )
-    })
+  handleEditToggle() {
+    this.setState({
+      editToggle: true
+    });
+  }
 
-    return (
-      <div>
-        {singleProduct}
-      </div>
+  handleConfirmDetails() {
+    this.setState({
+      editToggle: false
+    });
+  }
+
+  render() {
+    //auto-resizes the text area
+    document.addEventListener(
+      "input",
+      function(event) {
+        if (event.target.tagName.toLowerCase() !== "textarea") return;
+        autoExpand(event.target);
+      },
+      false
     );
+
+    var autoExpand = function(field) {
+      field.style.height = "inherit";
+
+      var computed = window.getComputedStyle(field);
+
+      var height =
+        parseInt(computed.getPropertyValue("border-top-width"), 10) +
+        parseInt(computed.getPropertyValue("padding-top"), 10) +
+        field.scrollHeight +
+        parseInt(computed.getPropertyValue("padding-bottom"), 10) +
+        parseInt(computed.getPropertyValue("border-bottom-width"), 10);
+
+      field.style.height = height + "px";
+    };
+
+    let singleProduct = this.state.product.map((prod, i) => {
+      return (
+        <div className="single_product">
+          {this.state.editToggle ? (
+            <div>
+              <img className="prod_image" src={prod.product_image} alt="" />
+              <div>
+                <input
+                  className="prod_name"
+                  type="text"
+                  defaultValue={prod.name}
+                />
+              </div>
+              <div>
+                <input
+                  className="prod_price"
+                  type="text"
+                  defaultValue={prod.price}
+                />
+              </div>
+              <div>
+                <textarea
+                  className="prod_description"
+                  type="text"
+                  defaultValue={prod.product_description}
+                />
+              </div>
+              <button onClick={this.handleConfirmDetails}>
+                Confirm
+              </button>
+            </div>
+          ) : (
+            <div>
+              <img className="prod_image" src={prod.product_image} alt="" />
+              <h1>{prod.name}</h1>
+              <h3>{prod.price}</h3>
+              <p>{prod.product_description}</p>
+              <button onClick={this.handleEditToggle}>
+                Edit
+              </button>
+            </div>
+          )}
+        </div>
+      );
+    });
+
+    return <div>{singleProduct}</div>;
   }
 }
 

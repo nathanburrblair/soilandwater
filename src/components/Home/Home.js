@@ -170,14 +170,6 @@ class Home extends Component {
               </p>
               <button>Shop plants</button>
             </SectionTwo>
-            <SectionThree>
-              <ContainersSubtitle>Containers</ContainersSubtitle>
-              <p>
-                Your plants are only as good as their containers. We have
-                containers unlike any you’ll find elsewhere. Come in and see.
-              </p>
-              <button>Shop Containers</button>
-            </SectionThree>
             <SectionFour>
               <DesignSubtitle>Design</DesignSubtitle>
               <p>
@@ -187,6 +179,14 @@ class Home extends Component {
               </p>
               <button>Learn Design</button>
             </SectionFour>
+            <SectionThree>
+              <ContainersSubtitle>Containers</ContainersSubtitle>
+              <p>
+                Your plants are only as good as their containers. We have
+                containers unlike any you’ll find elsewhere. Come in and see.
+              </p>
+              <button>Shop Containers</button>
+            </SectionThree>
           </article>
         </main>
 

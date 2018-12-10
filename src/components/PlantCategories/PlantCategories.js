@@ -13,6 +13,7 @@ class PlantCategories extends Component {
       plantName: "",
       plantPrice: 0,
       plantDescription: "",
+      plantCategory: this.props.match.params.category,
       category: null
     };
 
@@ -60,7 +61,8 @@ class PlantCategories extends Component {
     Axios.post(`/api/plants/${this.props.match.params.category}`, {
       name: this.state.plantName,
       price: this.state.plantPrice,
-      product_description: this.state.plantDescription
+      product_description: this.state.plantDescription,
+      product_category: this.state.plantCategory
     }).then(response => {
       this.props.history.push(`/plants/${this.props.match.params.category}`);
     });
