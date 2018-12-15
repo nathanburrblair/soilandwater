@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import "./Home.css";
 import styled from "styled-components";
 import plantsbg from "../../images/plantsbg.jpg";
-import containerbg from "../../images/containerbgdark.jpg";
+import containerbg from "../../images/containerbgdr.jpg";
 import designbg from "../../images/designbg1.jpg";
+import { Link } from 'react-router-dom';
 
 const Title = styled.h1`
   font-size: 34px;
@@ -15,7 +16,7 @@ const Title = styled.h1`
 const PlantsSubtitle = styled.h2`
   font-size: 34px;
   font-family: "Krona One", sans-serif;
-  color: #f1f1f1;
+  color: #f2f2f2;
   text-transform: uppercase;
   margin-top: 0px;
 `;
@@ -23,7 +24,7 @@ const PlantsSubtitle = styled.h2`
 const ContainersSubtitle = styled.h2`
   font-size: 34px;
   font-family: "Krona One", sans-serif;
-  color: #f1f1f1;
+  color: #f2f2f2;
   text-transform: uppercase;
   margin-top: 0px;
 `;
@@ -49,7 +50,7 @@ const SectionTwo = styled.section`
 
   p {
     width: 70%;
-    color: #f1f1f1;
+    color: #f2f2f2;
     font-family: "Lato", sans-serif;
     font-size: 18px;
     padding: 0 0 40px 0;
@@ -61,7 +62,7 @@ const SectionTwo = styled.section`
     font-family: "Krona One", sans-serif;
     font-size: 18px;
     text-transform: uppercase;
-    background-color: #f1f1f1;
+    background-color: #f2f2f2;
     color: #353535;
     border: none;
     padding: 0 16px 0 16px;
@@ -75,12 +76,14 @@ const SectionThree = styled.section`
   align-items: center;
   background-image: url(${containerbg});
   background-size: cover;
+  background-position: center;
+  /* background-position-y: 10px; */
   height: 50vh;
   padding: 40px 0 40px 0;
 
   p {
     width: 70%;
-    color: #f1f1f1;
+    color: #f2f2f2;
     font-family: "Lato", sans-serif;
     font-size: 18px;
     padding: 0 0 40px 0;
@@ -93,7 +96,7 @@ const SectionThree = styled.section`
     font-size: 18px;
     text-transform: uppercase;
     color: #353535;
-    background-color: #f1f1f1;
+    background-color: #f2f2f2;
     border: none;
     padding: 0 16px 0 16px;
   }
@@ -123,7 +126,7 @@ const SectionFour = styled.section`
     font-family: "Krona One", sans-serif;
     font-size: 18px;
     text-transform: uppercase;
-    background-color: #f1f1f1;
+    background-color: #f2f2f2;
     color: #353535;
     border: none;
     padding: 0 16px 0 16px;
@@ -137,7 +140,7 @@ const Footer = styled.footer`
   justify-content: center;
   height: 25vh;
   background-color: #171717;
-  color: #f1f1f1;
+  color: #f2f2f2;
 `;
 
 class Home extends Component {
@@ -168,7 +171,7 @@ class Home extends Component {
                 We’ve scoured the globe to find the best of the best. Come to
                 our shop and you’ll find the best plants the earth has to offer.
               </p>
-              <button>Shop plants</button>
+              <Link to ='/plants'><button>Shop plants</button></Link>
             </SectionTwo>
             <SectionFour>
               <DesignSubtitle>Design</DesignSubtitle>
@@ -177,7 +180,7 @@ class Home extends Component {
                 pot it for you. We’ll also come to your home to design your
                 space.
               </p>
-              <button>Learn Design</button>
+              <Link to='/design'><button>Learn Design</button></Link>
             </SectionFour>
             <SectionThree>
               <ContainersSubtitle>Containers</ContainersSubtitle>
@@ -185,7 +188,7 @@ class Home extends Component {
                 Your plants are only as good as their containers. We have
                 containers unlike any you’ll find elsewhere. Come in and see.
               </p>
-              <button>Shop Containers</button>
+              <Link to='/containers'><button>Shop Containers</button></Link>
             </SectionThree>
           </article>
         </main>

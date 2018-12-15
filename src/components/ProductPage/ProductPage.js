@@ -45,7 +45,7 @@ class ProductPage extends Component {
   render() {
     //auto-resizes the text area
     document.addEventListener(
-      "input",
+      "mouseover",
       function(event) {
         if (event.target.tagName.toLowerCase() !== "textarea") return;
         autoExpand(event.target);
@@ -72,7 +72,7 @@ class ProductPage extends Component {
       return (
         <div className="single_product">
           {this.state.editToggle ? (
-            <div>
+            <div className="editing_product">
               <img className="prod_image" src={prod.product_image} alt="" />
               <div>
                 <input
@@ -100,10 +100,10 @@ class ProductPage extends Component {
               </button>
             </div>
           ) : (
-            <div>
+            <div className="not_editing_product">
               <img className="prod_image" src={prod.product_image} alt="" />
               <h1>{prod.name}</h1>
-              <h3>{prod.price}</h3>
+              <h3>${prod.price}</h3>
               <p>{prod.product_description}</p>
               <button onClick={this.handleEditToggle}>
                 Edit

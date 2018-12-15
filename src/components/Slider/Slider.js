@@ -50,7 +50,7 @@ class Slider extends Component {
     return (
       <div className="slider">
         <div className="some_text">
-        <h1>Plants</h1>
+        <h2>Plants</h2>
           <p>
             We specilize in succulents, orchids, and bonsai trees.
           </p>

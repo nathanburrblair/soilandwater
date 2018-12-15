@@ -1,37 +1,52 @@
-.slider_container {
-    height: 520px;
+/* .slider_container {
+    height: 500px;
     padding-top: 10vh;
-}
+} */
 
-.all_plant_list {
+/* .all_plant_list {
     display: flex;
     flex-direction: column;
     align-items: center;
+} */
+
+.plant_container {
+    display: flex;
+    flex-direction: column;
 }
+
+.plant_intro {
+    margin-top: 10vh;
+    padding: 28px;
+    font-family: "Lato", sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+/* Orchid */
 
 .orchid {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url(../../images/orchidbgd.jpg);
+    background-image: url(../../images/pinkorchidbg.jpg);
     background-size: cover;
-    height: 50vh;
+    height: 400px;
     padding: 40px 0 40px 0;
 }
 
-.orchid p {
+.orchid p{
     width: 70%;
-    color: #f1f1f1;
+    color: #353535;
     font-family: "Lato", sans-serif;
     font-size: 18px;
     padding: 0 0 40px 0;
 }
 
 .orchid h2 {
-    font-size: 34px;
+    font-size: 28px;
     font-family: "Krona One", sans-serif;
-    color: #f1f1f1;
+    color: #353535;
     text-transform: uppercase;
     margin-top: 0px;
 }
@@ -42,7 +57,85 @@
     font-family: "Krona One", sans-serif;
     font-size: 18px;
     text-transform: uppercase;
-    background-color: #f1f1f1;
+    background-color: #353535;
+    color: #f2f2f2;
+    border: none;
+    padding: 0 16px 0 16px;
+  }
+
+  .succulent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../images/plants2rsdk.jpg);
+    background-size: cover;
+    height: 400px;
+    padding: 40px 0 40px 0;
+}
+
+.succulent h2 {
+    font-size: 28px;
+    font-family: "Krona One", sans-serif;
+    color: #f2f2f2;
+    text-transform: uppercase;
+    margin-top: 0px;
+}
+
+.succulent p {
+    width: 70%;
+    color: #f2f2f2;
+    font-family: "Lato", sans-serif;
+    font-size: 18px;
+    padding: 0 0 40px 0;
+}
+
+.succulent button {
+    width: auto;
+    height: 50px;
+    font-family: "Krona One", sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    background-color: #f2f2f2;
+    color: #353535;
+    border: none;
+    padding: 0 16px 0 16px;
+  }
+
+.bonsai {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../images/bonsaibgdrs.jpg);
+    background-size: cover;
+    height: 400px;
+    padding: 40px 0 40px 0;
+}
+
+.bonsai h2 {
+    font-size: 28px;
+    font-family: "Krona One", sans-serif;
+    color: #f2f2f2;
+    text-transform: uppercase;
+    margin-top: 0px;
+}
+
+.bonsai p {
+    width: 70%;
+    color: #f2f2f2;
+    font-family: "Lato", sans-serif;
+    font-size: 18px;
+    padding: 0 0 40px 0;
+}
+
+.bonsai button {
+    width: auto;
+    height: 50px;
+    font-family: "Krona One", sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    background-color: #f2f2f2;
     color: #353535;
     border: none;
     padding: 0 16px 0 16px;

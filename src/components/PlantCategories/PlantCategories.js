@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Axios from "axios";
 import ProductCard from "../ProductCard/ProductCard";
 import "./PlantCategories.css";
+import Dropzone from "react-dropzone";
 
 class PlantCategories extends Component {
   constructor(props) {
@@ -14,7 +15,8 @@ class PlantCategories extends Component {
       plantPrice: 0,
       plantDescription: "",
       plantCategory: this.props.match.params.category,
-      category: null
+      category: null,
+      plantPicture: ""
     };
 
     this.handleAddPlant = this.handleAddPlant.bind(this);
@@ -71,12 +73,14 @@ class PlantCategories extends Component {
   render() {
     console.log("match params", this.props.match.params);
     console.log("state", this.state);
+
     let listOfThings = this.state.products.map((product, i) => {
       return <ProductCard key={i} product={product} />;
     });
 
     return (
       <div className="mainBody">
+
         {this.props.match.params.category.charAt(0).toUpperCase() +
           this.props.match.params.category.slice(1) +
           " Page"}

@@ -28,28 +28,43 @@ class Plants extends Component {
     });
 
     return (
-      <div>
-        <div className="slider_container">
+      <div className="plant_container">
+        {/* <div className="slider_container">
           <Slider />
-        </div>
-
+        </div> */}
         {/* <div className="all_plant_list">{displayAllPlants}</div> */}
+        <div className="plant_intro">
+          <p>This is an intro paragraph that says what amazing plants we have at our store. It encourages you to browse and buy plants.</p>
+        </div>
         <div className="orchid">
           <Link to="/plants/orchid">
             <h2>Orchids</h2>
           </Link>
-          <p>We only sell the most beautiful orchids in the world. Your jaw will drop to the floor when you see our orchids.</p>
-          <button>Shop Orchids</button>
+          <p>
+            We only sell the most beautiful orchids in the world. Your jaw will
+            drop to the floor when you see our orchids.
+          </p>
+          <Link to='/plants/orchid'><button>Shop Orchids</button></Link>
         </div>
         <div className="succulent">
           <Link to="/plants/succulent">
-            <li>Succulents</li>
+            <h2>Succulents</h2>
           </Link>
+          <p>
+            We only sell the most beautiful succulents in the world. Your jaw will
+            drop to the floor when you see our succulents.
+          </p>
+          <Link to='/plants/succulent'><button>Shop Succulents</button></Link>
         </div>
         <div className="bonsai">
           <Link to="/plants/bonsai">
-            <li>Bonsai</li>
+            <h2>Bonsai</h2>
           </Link>
+          <p>
+            We only sell the most beautiful bonsai trees in the world. Your jaw will
+            drop to the floor when you see our bonsai trees.
+          </p>
+          <Link to='/plants/bonsai'><button>Shop Bonsai</button></Link>
         </div>
       </div>
     );
