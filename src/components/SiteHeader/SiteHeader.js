@@ -3,6 +3,7 @@ import './SiteHeader.css'
 import styled from "styled-components";
 import navBars from "../../images/baseline_menu_black_18dp.png";
 import MainNav from '../../components/MainNav/MainNav';
+import { Link } from 'react-router-dom';
 
 const Header = styled.header`
   /* display: flex;
@@ -51,7 +52,7 @@ class SiteHeader extends Component {
       <div>
         <Header>
           <div className="containImage">
-          <Title>SOIL + WATER</Title>
+          <Link to='/'><Title>SOIL + WATER</Title></Link>
             <img className="image" src={navBars} onClick={this.handleNavClick} alt="" />
           </div>
         </Header>

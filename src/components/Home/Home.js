@@ -46,7 +46,7 @@ const SectionTwo = styled.section`
   background-size: cover;
   /* background-attachment: fixed; */
   height: 50vh;
-  padding: 40px 0 40px 0;
+  padding: 60px 0 60px 0;
 
   p {
     width: 70%;
@@ -79,7 +79,7 @@ const SectionThree = styled.section`
   background-position: center;
   /* background-position-y: 10px; */
   height: 50vh;
-  padding: 40px 0 40px 0;
+  padding: 60px 0 60px 0;
 
   p {
     width: 70%;
@@ -110,7 +110,7 @@ const SectionFour = styled.section`
   background-image: url(${designbg});
   background-size: cover;
   height: 50vh;
-  padding: 40px 0 40px 0;
+  padding: 60px 0 60px 0;
 
   p {
     width: 70%;

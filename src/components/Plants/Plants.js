@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./Plants.css";
-import Slider from "../Slider/Slider";
+// import Slider from "../Slider/Slider";
 import axios from "axios";
-import Plant from "../../components/Plant/Plant";
+// import Plant from "../../components/Plant/Plant";
 import { Link } from "react-router-dom";
 
 class Plants extends Component {
@@ -23,9 +23,9 @@ class Plants extends Component {
   }
 
   render() {
-    let displayAllPlants = this.state.allPlants.map((plant, i) => {
-      return <Plant key={i} plant={plant} />;
-    });
+    // let displayAllPlants = this.state.allPlants.map((plant, i) => {
+    //   return <Plant key={i} plant={plant} />;
+    // });
 
     return (
       <div className="plant_container">

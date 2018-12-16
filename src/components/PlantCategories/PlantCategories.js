@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Axios from "axios";
 import ProductCard from "../ProductCard/ProductCard";
 import "./PlantCategories.css";
-import Dropzone from "react-dropzone";
 
 class PlantCategories extends Component {
   constructor(props) {
