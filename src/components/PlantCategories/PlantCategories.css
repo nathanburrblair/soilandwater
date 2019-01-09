@@ -1,3 +1,17 @@
 .mainBody {
     padding-top: 11vh;
 }
+
+.category_intro {
+    /* margin-top: 10vh; */
+    padding: 28px;
+    font-family: "Lato", sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.category_intro h2 {
+    font-family: "Krona One", sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+}

@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Axios from "axios";
 import ProductCard from "../ProductCard/ProductCard";
 import "./PlantCategories.css";
+import Dropzone from "react-dropzone";
+import classNames from 'classnames'
 
 class PlantCategories extends Component {
   constructor(props) {
@@ -58,6 +60,32 @@ class PlantCategories extends Component {
     });
   }
 
+  onDrop(files) {
+    var file = files[0];
+
+    Axios.get("/api/sign", {
+      filename: file.name,
+      filetype: file.type
+    })
+      .then(function(result) {
+        var signedUrl = result.data.signedUrl;
+
+        var options = {
+          headers: {
+            "Content-Type": file.type
+          }
+        };
+
+        return Axios.put(signedUrl, file, options);
+      })
+      .then(function(result) {
+        console.log(result);
+      })
+      .catch(function(err) {
+        console.log(err);
+      });
+  }
+
   handleAddPlantToDB() {
     Axios.post(`/api/plants/${this.props.match.params.category}`, {
       name: this.state.plantName,
@@ -79,10 +107,18 @@ class PlantCategories extends Component {
 
     return (
       <div className="mainBody">
-
-        {this.props.match.params.category.charAt(0).toUpperCase() +
-          this.props.match.params.category.slice(1) +
-          " Page"}
+        <div className="category_intro">
+          <h2>
+            {this.props.match.params.category.charAt(0).toUpperCase() +
+              this.props.match.params.category.slice(1) +
+              "S"}{" "}
+            You'll Love
+          </h2>
+          <p>
+            This is an intro paragraph that says what amazing plants we have at
+            our store. It encourages you to browse and buy plants.
+          </p>
+        </div>
         <div className="list">{listOfThings}</div>
         <div className="add-plant">
           {this.state.addToggle ? (
@@ -102,6 +138,25 @@ class PlantCategories extends Component {
                 placeholder="Description"
                 type="text"
               />
+
+              <Dropzone onDrop={this.onDrop} size={150}>
+                {({ getRootProps, getInputProps, isDragActive }) => {
+                  return (
+                    <div 
+                      {...getRootProps()} 
+                      className={classNames('dropzone', {'dropzone--isActive': isDragActive})}
+                    >
+                      <input {...getInputProps()} />
+                      {
+                        isDragActive ?
+                          <p>Drop files here...</p> :
+                          <p>Try dropping some file shere, or click to select files to upload.</p>
+                      }
+                </div>
+                  )
+                }}
+              </Dropzone>
+
               <button onClick={this.handleAddPlantToDB}>Add Plant</button>
             </div>
           ) : (

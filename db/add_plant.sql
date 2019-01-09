@@ -3,4 +3,4 @@ insert into inventory
 values 
 ( ${name}, ${price}, ${product_description}, ${product_category});
 select * from inventory;
-order by id asc;
+-- order by id asc;

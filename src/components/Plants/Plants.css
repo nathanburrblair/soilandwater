@@ -22,6 +22,12 @@
     line-height: 24px;
 }
 
+.plant_intro h2 {
+    font-family: "Krona One", sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
 /* Orchid */
 
 .orchid {

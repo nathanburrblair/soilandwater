@@ -34,6 +34,7 @@ class Plants extends Component {
         </div> */}
         {/* <div className="all_plant_list">{displayAllPlants}</div> */}
         <div className="plant_intro">
+          <h2>Plants You'll Love</h2>
           <p>This is an intro paragraph that says what amazing plants we have at our store. It encourages you to browse and buy plants.</p>
         </div>
         <div className="orchid">
