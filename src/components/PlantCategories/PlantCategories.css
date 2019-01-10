@@ -15,3 +15,25 @@
     text-transform: uppercase;
     font-size: 20px;
 }
+
+.dragbox {
+    display: flex;
+    justify-content: center;
+}
+
+.inner_box:focus{
+    outline:0;
+}
+
+button {
+    width: auto;
+    height: 50px;
+    font-family: "Krona One", sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    background-color: #f2f2f2;
+    color: #353535;
+    border: none;
+    padding: 0 16px 0 16px;
+    margin-bottom: 60px;
+}

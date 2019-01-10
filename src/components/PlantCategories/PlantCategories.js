@@ -3,7 +3,66 @@ import Axios from "axios";
 import ProductCard from "../ProductCard/ProductCard";
 import "./PlantCategories.css";
 import Dropzone from "react-dropzone";
-import classNames from 'classnames'
+
+//For dropzone image preview
+const thumbsContainer = {
+  display: "flex",
+  flexDirection: "row",
+  alignItems: "center",
+  justifyContent: "center",
+  flexWrap: "wrap",
+  marginTop: 16
+};
+
+const thumb = {
+  display: "inline-flex",
+  borderRadius: 2,
+  border: "1px solid #eaeaea",
+  marginBottom: 8,
+  marginRight: 8,
+  width: 100,
+  height: 100,
+  padding: 4,
+  boxSizing: "border-box"
+};
+
+const thumbInner = {
+  display: "flex",
+  minWidth: 0,
+  overflow: "hidden"
+};
+
+const img = {
+  display: "block",
+  width: "auto",
+  height: "100%"
+};
+
+const baseStyle = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+  width: 200,
+  height: 200,
+  borderWidth: 1,
+  borderColor: "#666",
+  borderStyle: "dashed",
+  borderRadius: 2,
+  marginTop: 20,
+  marginBottom: 40
+};
+const activeStyle = {
+  borderStyle: "solid",
+  borderColor: "#6c6",
+  backgroundColor: "#eee"
+};
+const rejectStyle = {
+  borderStyle: "solid",
+  borderColor: "#c66",
+  backgroundColor: "#eee"
+};
+//end dropzone image preview
 
 class PlantCategories extends Component {
   constructor(props) {
@@ -17,7 +76,8 @@ class PlantCategories extends Component {
       plantDescription: "",
       plantCategory: this.props.match.params.category,
       category: null,
-      plantPicture: ""
+      plantPicture: "",
+      files: []
     };
 
     this.handleAddPlant = this.handleAddPlant.bind(this);
@@ -60,46 +120,64 @@ class PlantCategories extends Component {
     });
   }
 
-  onDrop(files) {
-    var file = files[0];
-
-    Axios.get("/api/sign", {
-      filename: file.name,
-      filetype: file.type
-    })
-      .then(function(result) {
-        var signedUrl = result.data.signedUrl;
-
-        var options = {
-          headers: {
-            "Content-Type": file.type
-          }
-        };
-
-        return Axios.put(signedUrl, file, options);
-      })
-      .then(function(result) {
-        console.log(result);
-      })
-      .catch(function(err) {
-        console.log(err);
-      });
-  }
-
   handleAddPlantToDB() {
     Axios.post(`/api/plants/${this.props.match.params.category}`, {
       name: this.state.plantName,
       price: this.state.plantPrice,
       product_description: this.state.plantDescription,
-      product_category: this.state.plantCategory
+      product_category: this.state.plantCategory,
+      product_image: this.state.plantPicture
     }).then(response => {
       this.props.history.push(`/plants/${this.props.match.params.category}`);
+      window.location.reload();
     });
+  }
+
+  handleUploadImages = files => {
+    const {
+      REACT_APP_CLOUDINARY_URL,
+      REACT_APP_CLOUDINARY_API,
+      REACT_APP_CLOUDINARY_PRESET
+    } = process.env;
+
+    const formData = new FormData();
+    formData.append("file", files[0]);
+    formData.append("tags", "moss, medium, gist");
+    formData.append("upload_preset", `${REACT_APP_CLOUDINARY_PRESET}`);
+    formData.append("api_key", `${REACT_APP_CLOUDINARY_API}`);
+    formData.append("timestamp", (Date.now() / 1000) | 0);
+
+    Axios.post(`${REACT_APP_CLOUDINARY_URL}`, formData).then(res => {
+      console.log("Hello");
+      this.setState({
+        plantPicture: res.data.secure_url,
+        files: files.map(file =>
+          Object.assign(file, {
+            preview: URL.createObjectURL(file)
+          })
+        )
+      });
+    });
+  };
+
+  componentWillUnmount() {
+    // Make sure to revoke the data uris to avoid memory leaks
+    this.state.files.forEach(file => URL.revokeObjectURL(file.preview));
   }
 
   render() {
     console.log("match params", this.props.match.params);
     console.log("state", this.state);
+
+    const { files } = this.state;
+
+    const thumbs = files.map(file => (
+      <div style={thumb} key={file.name}>
+        <div style={thumbInner}>
+          <img src={file.preview} style={img} alt="" />
+        </div>
+      </div>
+    ));
 
     let listOfThings = this.state.products.map((product, i) => {
       return <ProductCard key={i} product={product} />;
@@ -139,21 +217,42 @@ class PlantCategories extends Component {
                 type="text"
               />
 
-              <Dropzone onDrop={this.onDrop} size={150}>
-                {({ getRootProps, getInputProps, isDragActive }) => {
+              <Dropzone
+                onDrop={this.handleUploadImages}
+                multiple
+                accept="image/*"
+              >
+                {({
+                  getRootProps,
+                  getInputProps,
+                  isDragActive,
+                  isDragAccept,
+                  isDragReject
+                }) => {
+                  let styles = { ...baseStyle };
+                  styles = isDragActive
+                    ? { ...styles, ...activeStyle }
+                    : styles;
+                  styles = isDragReject
+                    ? { ...styles, ...rejectStyle }
+                    : styles;
+
                   return (
-                    <div 
-                      {...getRootProps()} 
-                      className={classNames('dropzone', {'dropzone--isActive': isDragActive})}
-                    >
-                      <input {...getInputProps()} />
-                      {
-                        isDragActive ?
-                          <p>Drop files here...</p> :
-                          <p>Try dropping some file shere, or click to select files to upload.</p>
-                      }
-                </div>
-                  )
+                    <div className="dragbox">
+                      <div
+                        className="inner_box"
+                        {...getRootProps()}
+                        style={styles}
+                      >
+                        <input {...getInputProps()} />
+                        <div>
+                          {isDragAccept ? "Drop" : "Drag"} files here...
+                        </div>
+                        {isDragReject && <div>Unsupported file type...</div>}
+                        <aside style={thumbsContainer}>{thumbs}</aside>
+                      </div>
+                    </div>
+                  );
                 }}
               </Dropzone>
 
