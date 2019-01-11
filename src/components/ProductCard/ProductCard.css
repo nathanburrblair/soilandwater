@@ -11,6 +11,11 @@
     /* height: 400px; */
 }
 
+.card p {
+    text-align: center;
+    color: #353535;
+}
+
 .overlay {
     position: absolute;
     bottom: 0;
@@ -62,6 +67,12 @@ h4 {
 
 @media (min-width: 768px) {
     .mobile_product_info {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .overlay {
         display: none;
     }
 }

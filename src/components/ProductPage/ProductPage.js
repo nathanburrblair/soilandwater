@@ -95,19 +95,19 @@ class ProductPage extends Component {
                   defaultValue={prod.product_description}
                 />
               </div>
-              <button onClick={this.handleConfirmDetails}>
-                Confirm
-              </button>
+              <button onClick={this.handleConfirmDetails}>Confirm</button>
             </div>
           ) : (
             <div className="not_editing_product">
-              <img className="prod_image" src={prod.product_image} alt="" />
-              <h1>{prod.name}</h1>
-              <h3>${prod.price}</h3>
-              <p>{prod.product_description}</p>
-              <button onClick={this.handleEditToggle}>
-                Edit
-              </button>
+              <div className="image_container">
+                <img className="prod_image" src={prod.product_image} alt="" />
+              </div>
+              <div className="info_container">
+                <h1>{prod.name}</h1>
+                <h3>${prod.price}</h3>
+                <p>{prod.product_description}</p>
+                <button onClick={this.handleEditToggle}>Edit</button>
+              </div>
             </div>
           )}
         </div>
