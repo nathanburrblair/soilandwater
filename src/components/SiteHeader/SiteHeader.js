@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import './SiteHeader.css'
+import "./SiteHeader.css";
 import styled from "styled-components";
 import navBars from "../../images/baseline_menu_black_18dp.png";
-import MainNav from '../../components/MainNav/MainNav';
-import { Link } from 'react-router-dom';
+import MainNav from "../../components/MainNav/MainNav";
+import { Link } from "react-router-dom";
 
 const Header = styled.header`
   /* display: flex;
@@ -26,7 +26,7 @@ const Title = styled.h1`
   margin-top: 0px;
   margin-bottom: 0px;
   font-family: "Krona One", sans-serif;
-  text-align:left;
+  text-align: left;
 `;
 
 class SiteHeader extends Component {
@@ -51,16 +51,37 @@ class SiteHeader extends Component {
     return (
       <div>
         <Header>
-          <div className="containImage">
-          <Link to='/'><Title>SOIL + WATER</Title></Link>
-            <img className="image" src={navBars} onClick={this.handleNavClick} alt="" />
+          <div className="contain_image">
+            <Link to="/">
+              <Title>SOIL + WATER</Title>
+            </Link>
+            <img
+              className="image"
+              src={navBars}
+              onClick={this.handleNavClick}
+              alt=""
+            />
+            <ul className="desktop_menu">
+              <li className="dropdown">
+                <span>Plants</span>
+                <ul className="about_menu">
+                  <Link to="/plants/orchid"><li>Orchids</li></Link>
+                  <Link to="/plants/succulent"><li>Succulents</li></Link>
+                  <Link to="/plants/bonsai"><li>Bonsai</li></Link>
+                </ul>
+              </li>
+              <li>Containers</li>
+              <li>Design</li>
+            </ul>
           </div>
         </Header>
 
-        <MainNav 
+        <div className="mobile_menu">
+          <MainNav
             visible={this.state.visible}
             handleNavClick={this.handleNavClick}
-        />
+          />
+        </div>
       </div>
     );
   }
