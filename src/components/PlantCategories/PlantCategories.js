@@ -259,7 +259,7 @@ class PlantCategories extends Component {
               <button onClick={this.handleAddPlantToDB}>Add Plant</button>
             </div>
           ) : (
-            <button onClick={this.handleAddPlant}>Add A Plant</button>
+            <button className="add_plant_button" onClick={this.handleAddPlant}>Add A Plant</button>
           )}
         </div>
       </div>

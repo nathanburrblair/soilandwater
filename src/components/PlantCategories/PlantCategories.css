@@ -8,6 +8,7 @@
   font-family: "Lato", sans-serif;
   font-size: 18px;
   line-height: 24px;
+  margin: 0 25% 0 25%;
 }
 
 .category_intro h2 {
@@ -38,21 +39,27 @@ button {
   margin-bottom: 60px;
 }
 
+.add_plant_button {
+  margin-top: 60px;
+}
+
 .list {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  grid-gap: 10px;
+  grid-gap: 20px;
+  padding: 0px;
+  margin: 0 20px 0 20px;
 }
 
 @media (min-width: 600px) {
     .list {
         grid-template-columns: repeat(2, 1fr);
-        grid-gap: 10px;
+        grid-gap: 20px;
     }
 }
  @media (min-width: 768px) {
      .list {
          grid-template-columns: repeat(3, 1fr);
-         grid-gap: 10px;
+         grid-gap: 20px;
      }
  }
