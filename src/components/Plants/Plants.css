@@ -28,6 +28,13 @@
     font-size: 20px;
 }
 
+.sub_categories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    margin: 0 20px 0 20px;
+}
+
 /* Orchid */
 
 .orchid {
@@ -38,10 +45,30 @@
     background-image: url(../../images/orchidbgrsz.jpg);
     background-size: cover;
     height: 400px;
+    width: auto;
     padding: 60px 0 60px 0;
+    position: relative;
 }
 
-.orchid p{
+.orchid:hover .orchid_overlay {
+    height: 520px;
+    width: 100%;
+    position:absolute;
+    background-color:#000;
+    opacity:0.5;
+    transition: 0.5s;
+  }
+
+.orchid_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    z-index: 2;
+}
+
+.orchid_text p{
     width: 70%;
     color: #F2F2F2;
     font-family: "Lato", sans-serif;
@@ -49,7 +76,7 @@
     padding: 0 0 40px 0;
 }
 
-.orchid h2 {
+.orchid_text h2 {
     font-size: 28px;
     font-family: "Krona One", sans-serif;
     color: #F2F2F2;
@@ -67,6 +94,7 @@
     color: #353535;
     border: none;
     padding: 0 16px 0 16px;
+    margin-bottom: 0;
   }
 
   .succulent {
@@ -78,9 +106,27 @@
     background-size: cover;
     height: 400px;
     padding: 60px 0 60px 0;
+    position: relative;
 }
 
-.succulent h2 {
+.succulent:hover .succulent_overlay {
+    height: 520px;
+    width: 100%;
+    position:absolute;
+    background-color:#000;
+    opacity:0.5;
+    transition: 0.5s;
+  }
+
+.succulent_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.succulent_text h2 {
     font-size: 28px;
     font-family: "Krona One", sans-serif;
     color: #f2f2f2;
@@ -88,7 +134,7 @@
     margin-top: 0px;
 }
 
-.succulent p {
+.succulent_text p {
     width: 70%;
     color: #f2f2f2;
     font-family: "Lato", sans-serif;
@@ -106,6 +152,7 @@
     color: #353535;
     border: none;
     padding: 0 16px 0 16px;
+    margin-bottom: 0;
   }
 
 .bonsai {
@@ -117,9 +164,27 @@
     background-size: cover;
     height: 400px;
     padding: 60px 0 60px 0;
+    position: relative;
 }
 
-.bonsai h2 {
+.bonsai:hover .bonsai_overlay {
+    height: 520px;
+    width: 100%;
+    position:absolute;
+    background-color:#000;
+    opacity:0.5;
+    transition: 0.5s;
+  }
+
+  .bonsai_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+  }
+
+.bonsai_text h2 {
     font-size: 28px;
     font-family: "Krona One", sans-serif;
     color: #f2f2f2;
@@ -127,7 +192,7 @@
     margin-top: 0px;
 }
 
-.bonsai p {
+.bonsai_text p {
     width: 70%;
     color: #f2f2f2;
     font-family: "Lato", sans-serif;
@@ -145,4 +210,12 @@
     color: #353535;
     border: none;
     padding: 0 16px 0 16px;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+      .sub_categories {
+        grid-template-columns: repeat(1, 1fr);
+
+      }
   }

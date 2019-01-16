@@ -13,9 +13,13 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 30%;
+    width: 35%;
     font-family: "Lato", sans-serif;
     font-size: 16px;
+}
+
+.desktop_menu li {
+    padding-left: 30px;
 }
 
 .dropdown:hover .about_menu{
@@ -51,7 +55,7 @@
     display: none;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 800px) {
     .mobile_menu {
         display: none;
     }
@@ -61,7 +65,7 @@
     }
 }
 
-@media (max-width: 501px) {
+@media (max-width: 800px) {
     .desktop_menu {
         display: none;
     }
