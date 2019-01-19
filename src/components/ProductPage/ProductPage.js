@@ -70,6 +70,7 @@ class ProductPage extends Component {
 
     let singleProduct = this.state.product.map((prod, i) => {
       return (
+        <div className="outer_product">
         <div className="single_product">
           {this.state.editToggle ? (
             <div className="editing_product">
@@ -110,6 +111,10 @@ class ProductPage extends Component {
               </div>
             </div>
           )}
+          <footer>
+          <h3>Come Visit Us</h3>
+        </footer>
+        </div>
         </div>
       );
     });

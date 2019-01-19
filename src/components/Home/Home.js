@@ -156,7 +156,7 @@ const SectionFourContainer = styled.section`
 `;
 
 const SectionFourEmpty = styled.section`
-  background-color: #BCB7BC;
+  background-color: #bcb7bc;
   height: 50vh;
   padding: 60px 0 60px 0;
 
@@ -206,9 +206,11 @@ const Footer = styled.footer`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 25vh;
+  height: 200px;
   background-color: #171717;
   color: #f2f2f2;
+  position: absolute;
+  bottom: 0;
 `;
 
 class Home extends Component {
@@ -221,7 +223,7 @@ class Home extends Component {
   }
   render() {
     return (
-      <div>
+      <div id="master_container">
         <main>
           <article>
             <div id="soilWater">

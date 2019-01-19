@@ -18,6 +18,7 @@ const Header = styled.header`
   display: block;
   width: 100%;
   height: 10vh;
+  z-index: 4;
 `;
 
 const Title = styled.h1`

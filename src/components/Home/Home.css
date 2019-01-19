@@ -1,10 +1,19 @@
+#master_container {
+  position: relative;
+  min-height: 100vh;
+}
+
+main {
+  padding-bottom: 200px;
+}
+
 #soilWater {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   height: 100vh;
   background-color: #ededef;
-  background: url('../../images/soilandwaterrs.jpg');
+  background: url("../../images/soilandwaterrs.jpg");
   /* background-image: url('../../images/soilandwaterrs.jpg'); */
   background-repeat: no-repeat;
   background-size: cover;

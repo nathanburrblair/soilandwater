@@ -185,83 +185,93 @@ class PlantCategories extends Component {
 
     return (
       <div className="mainBody">
-        <div className="category_intro">
-          <h2>
-            {this.props.match.params.category.charAt(0).toUpperCase() +
-              this.props.match.params.category.slice(1) +
-              "S"}{" "}
-            You'll Love
-          </h2>
-          <p>
-            This is an intro paragraph that says what amazing plants we have at
-            our store. It encourages you to browse and buy plants.
-          </p>
-        </div>
-        <div className="list">{listOfThings}</div>
-        <div className="add-plant">
-          {this.state.addToggle ? (
-            <div>
-              <input
-                onChange={this.handlePlantName}
-                placeholder="Plant Name"
-                type="text"
-              />
-              <input
-                onChange={this.handlePlantPrice}
-                placeholder="Price"
-                type="text"
-              />
-              <input
-                onChange={this.handlePlantDescription}
-                placeholder="Description"
-                type="text"
-              />
+        <div className="content_container">
+          <div className="category_intro">
+            <h2>
+              {this.props.match.params.category.charAt(0).toUpperCase() +
+                this.props.match.params.category.slice(1) +
+                "S"}{" "}
+              You'll Love
+            </h2>
+            <p>
+              This is an intro paragraph that says what amazing plants we have
+              at our store. It encourages you to browse and buy plants.
+            </p>
+          </div>
+          <div className="list">{listOfThings}</div>
+          <div className="add-plant">
+            {this.state.addToggle ? (
+              <div>
+                <input
+                  onChange={this.handlePlantName}
+                  placeholder="Plant Name"
+                  type="text"
+                />
+                <input
+                  onChange={this.handlePlantPrice}
+                  placeholder="Price"
+                  type="text"
+                />
+                <input
+                  onChange={this.handlePlantDescription}
+                  placeholder="Description"
+                  type="text"
+                />
 
-              <Dropzone
-                onDrop={this.handleUploadImages}
-                multiple
-                accept="image/*"
-              >
-                {({
-                  getRootProps,
-                  getInputProps,
-                  isDragActive,
-                  isDragAccept,
-                  isDragReject
-                }) => {
-                  let styles = { ...baseStyle };
-                  styles = isDragActive
-                    ? { ...styles, ...activeStyle }
-                    : styles;
-                  styles = isDragReject
-                    ? { ...styles, ...rejectStyle }
-                    : styles;
+                <Dropzone
+                  onDrop={this.handleUploadImages}
+                  multiple
+                  accept="image/*"
+                >
+                  {({
+                    getRootProps,
+                    getInputProps,
+                    isDragActive,
+                    isDragAccept,
+                    isDragReject
+                  }) => {
+                    let styles = { ...baseStyle };
+                    styles = isDragActive
+                      ? { ...styles, ...activeStyle }
+                      : styles;
+                    styles = isDragReject
+                      ? { ...styles, ...rejectStyle }
+                      : styles;
 
-                  return (
-                    <div className="dragbox">
-                      <div
-                        className="inner_box"
-                        {...getRootProps()}
-                        style={styles}
-                      >
-                        <input {...getInputProps()} />
-                        <div>
-                          {isDragAccept ? "Drop" : "Drag"} files here...
+                    return (
+                      <div className="dragbox">
+                        <div
+                          className="inner_box"
+                          {...getRootProps()}
+                          style={styles}
+                        >
+                          <input {...getInputProps()} />
+                          <div>
+                            {isDragAccept ? "Drop" : "Drag"} files here...
+                          </div>
+                          {isDragReject && <div>Unsupported file type...</div>}
+                          <aside style={thumbsContainer}>{thumbs}</aside>
                         </div>
-                        {isDragReject && <div>Unsupported file type...</div>}
-                        <aside style={thumbsContainer}>{thumbs}</aside>
                       </div>
-                    </div>
-                  );
-                }}
-              </Dropzone>
+                    );
+                  }}
+                </Dropzone>
 
-              <button onClick={this.handleAddPlantToDB}>Add Plant</button>
-            </div>
-          ) : (
-            <button className="add_plant_button" onClick={this.handleAddPlant}>Add A Plant</button>
-          )}
+                <button onClick={this.handleAddPlantToDB}>Add Plant</button>
+              </div>
+            ) : (
+              <button
+                className="add_plant_button"
+                onClick={this.handleAddPlant}
+              >
+                Add A Plant
+              </button>
+            )}
+          </div>
         </div>
+        <footer>
+          <h3>Come Visit Us</h3>
+        </footer>
       </div>
     );
   }
