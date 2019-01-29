@@ -89,7 +89,7 @@ class Plants extends Component {
             </div>
           </div>
         </div>
-        <footer>
+        <footer className="plants_footer">
           <h3>Come Visit Us</h3>
         </footer>
       </div>

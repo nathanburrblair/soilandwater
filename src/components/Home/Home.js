@@ -4,6 +4,9 @@ import styled from "styled-components";
 import plantsbg from "../../images/plantsbg.jpg";
 import containerbg from "../../images/containerbgdr.jpg";
 import designbg from "../../images/designbg1.jpg";
+import fb from "../../images/facebook-logo.svg";
+import insta from "../../images/instagram.svg";
+import twitter from "../../images/twitter.svg";
 import { Link } from "react-router-dom";
 
 const Title = styled.h1`
@@ -18,7 +21,7 @@ const Title = styled.h1`
   }
 
   @media (min-width: 1000px) {
-    margin: 50% 0 50% 0;
+    margin: 60% 0 50% 0;
     color: #f2f2f2;
   }
 `;
@@ -81,18 +84,6 @@ const SectionTwo = styled.section`
     padding: 0 0 40px 0;
   }
 
-  button {
-    width: auto;
-    height: 50px;
-    font-family: "Krona One", sans-serif;
-    font-size: 18px;
-    text-transform: uppercase;
-    background-color: #f2f2f2;
-    color: #353535;
-    border: none;
-    padding: 0 16px 0 16px;
-  }
-
   @media (min-width: 768px) {
     width: 50%;
   }
@@ -131,18 +122,6 @@ const SectionThree = styled.section`
     font-family: "Lato", sans-serif;
     font-size: 18px;
     padding: 0 0 40px 0;
-  }
-
-  button {
-    width: auto;
-    height: 50px;
-    font-family: "Krona One", sans-serif;
-    font-size: 18px;
-    text-transform: uppercase;
-    color: #353535;
-    background-color: #f2f2f2;
-    border: none;
-    padding: 0 16px 0 16px;
   }
 
   @media (min-width: 768px) {
@@ -184,33 +163,82 @@ const SectionFour = styled.section`
     padding: 0 0 40px 0;
   }
 
-  button {
-    width: auto;
-    height: 50px;
-    font-family: "Krona One", sans-serif;
-    font-size: 18px;
-    text-transform: uppercase;
-    background-color: #f2f2f2;
-    color: #353535;
-    border: none;
-    padding: 0 16px 0 16px;
-  }
-
   @media (min-width: 768px) {
     width: 50%;
   }
 `;
 
-const Footer = styled.footer`
+const Button = styled.button`
+  width: auto;
+  height: 50px;
+  font-family: "Krona One", sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  background-color: #f2f2f2;
+  color: #353535;
+  border: none;
+  padding: 0 16px 0 16px;
+
+  :hover {
+    background-color: #979696;
+    cursor: pointer;
+  }
+
+  :active {
+    transform: scale(1.1);
+    outline: 0;
+  }
+
+  :focus {
+    outline: 0;
+  }
+`;
+
+const HomeFooter = styled.footer`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 200px;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 300px;
+  width: 100%;
   background-color: #171717;
   color: #f2f2f2;
   position: absolute;
   bottom: 0;
+  padding-top: 60px;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 60px;
+  }
+`;
+
+const ContactInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 0 0 0 10%;
+
+  @media (max-width: 500px) {
+    padding: 0;
+    text-align: center;
+  }
+`;
+
+const Social = styled.div`
+  display: flex;
+  padding: 0 10% 0 0;
+
+  img {
+    height: 30px;
+    width: 30px;
+    padding: 24px 10px 10px 10px;
+  }
+
+  @media (max-width: 500px) {
+    padding: 0;
+  }
 `;
 
 class Home extends Component {
@@ -229,7 +257,10 @@ class Home extends Component {
             <div id="soilWater">
               <div id="layer" />
               <div />
-              <Title>SOIL + WATER Plant Co.</Title>
+              <Title>
+                SOIL + WATER <br />
+                Plant Co.
+              </Title>
             </div>
             <SectionTwoContainer>
               <SectionTwo>
@@ -240,7 +271,7 @@ class Home extends Component {
                   offer.
                 </p>
                 <Link to="/plants">
-                  <button>Shop plants</button>
+                  <Button>Shop plants</Button>
                 </Link>
               </SectionTwo>
               <SectionTwoEmpty />
@@ -256,7 +287,7 @@ class Home extends Component {
                   space.
                 </p>
                 <Link to="/design">
-                  <button>Learn Design</button>
+                  <Button>Learn Design</Button>
                 </Link>
               </SectionFour>
             </SectionFourContainer>
@@ -268,7 +299,7 @@ class Home extends Component {
                   containers unlike any you’ll find elsewhere. Come in and see.
                 </p>
                 <Link to="/containers">
-                  <button>Shop Containers</button>
+                  <Button>Shop Containers</Button>
                 </Link>
               </SectionThree>
               <SectionThreeEmpty />
@@ -276,9 +307,24 @@ class Home extends Component {
           </article>
         </main>
 
-        <Footer>
-          <h3>Come Visit Us</h3>
-        </Footer>
+        <HomeFooter>
+          <ContactInfo>
+            <h3>SOIL & WATER</h3>
+            <p>
+              123 Main St.
+              <br />
+              Anytown, USA
+              <br />
+              87654
+            </p>
+            <p>(987) 654-3210</p>
+          </ContactInfo>
+          <Social>
+            <img src={fb} alt="" />
+            <img src={insta} alt="" />
+            <img src={twitter} alt="" />
+          </Social>
+        </HomeFooter>
       </div>
     );
   }

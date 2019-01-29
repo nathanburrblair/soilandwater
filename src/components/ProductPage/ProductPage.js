@@ -111,7 +111,7 @@ class ProductPage extends Component {
               </div>
             </div>
           )}
-          <footer>
+          <footer className="product_page_footer">
           <h3>Come Visit Us</h3>
         </footer>
         </div>

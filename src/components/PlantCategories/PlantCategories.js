@@ -269,7 +269,7 @@ class PlantCategories extends Component {
             )}
           </div>
         </div>
-        <footer>
+        <footer className="plant_categories_footer">
           <h3>Come Visit Us</h3>
         </footer>
       </div>
