@@ -4,9 +4,6 @@ import styled from "styled-components";
 import plantsbg from "../../images/plantsbg.jpg";
 import containerbg from "../../images/containerbgdr.jpg";
 import designbg from "../../images/designbg1.jpg";
-import fb from "../../images/facebook-logo.svg";
-import insta from "../../images/instagram.svg";
-import twitter from "../../images/twitter.svg";
 import { Link } from "react-router-dom";
 
 const Title = styled.h1`
@@ -194,53 +191,6 @@ const Button = styled.button`
   }
 `;
 
-const HomeFooter = styled.footer`
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
-  height: 300px;
-  width: 100%;
-  background-color: #171717;
-  color: #f2f2f2;
-  position: absolute;
-  bottom: 0;
-  padding-top: 60px;
-
-  @media (max-width: 500px) {
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 60px;
-  }
-`;
-
-const ContactInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  padding: 0 0 0 10%;
-
-  @media (max-width: 500px) {
-    padding: 0;
-    text-align: center;
-  }
-`;
-
-const Social = styled.div`
-  display: flex;
-  padding: 0 10% 0 0;
-
-  img {
-    height: 30px;
-    width: 30px;
-    padding: 24px 10px 10px 10px;
-  }
-
-  @media (max-width: 500px) {
-    padding: 0;
-  }
-`;
-
 class Home extends Component {
   componentDidMount() {
     const parallax = document.getElementById("soilWater");
@@ -306,25 +256,6 @@ class Home extends Component {
             </SectionThreeContainer>
           </article>
         </main>
-
-        <HomeFooter>
-          <ContactInfo>
-            <h3>SOIL & WATER</h3>
-            <p>
-              123 Main St.
-              <br />
-              Anytown, USA
-              <br />
-              87654
-            </p>
-            <p>(987) 654-3210</p>
-          </ContactInfo>
-          <Social>
-            <img src={fb} alt="" />
-            <img src={insta} alt="" />
-            <img src={twitter} alt="" />
-          </Social>
-        </HomeFooter>
       </div>
     );
   }

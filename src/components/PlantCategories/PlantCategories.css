@@ -12,10 +12,6 @@
   margin: 0 5% 0 5%;
 }
 
-.content_container {
-  padding-bottom: 200px;
-}
-
 .category_intro h2 {
   font-family: "Krona One", sans-serif;
   text-transform: uppercase;
@@ -56,37 +52,23 @@ button {
   margin: 0 20px 0 20px;
 }
 
-.plant_categories_footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 200px;
-  background-color: #171717;
-  color: #f2f2f2;
-  position: absolute;
-  bottom: 0;
-  margin-top: 60px;
-}
-
 @media (min-width: 600px) {
-    .list {
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 20px;
-    }
+  .list {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
 
-    .category_intro {
-      margin: 0 10% 0 10%;
-
-    }
+  .category_intro {
+    margin: 0 10% 0 10%;
+  }
 }
- @media (min-width: 770px) {
-     .list {
-         grid-template-columns: repeat(3, 1fr);
-         grid-gap: 20px;
-     }
+@media (min-width: 770px) {
+  .list {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
 
-     .category_intro {
-       margin: 0 20% 0 20%;
-     }
- }
+  .category_intro {
+    margin: 0 20% 0 20%;
+  }
+}

@@ -33,7 +33,7 @@ class Plants extends Component {
           <Slider />
         </div> */}
         {/* <div className="all_plant_list">{displayAllPlants}</div> */}
-        <div className="content_container">
+        <div className="plants_content_container">
           <div className="plant_intro">
             <h2>Plants You'll Love</h2>
             <p>
@@ -89,9 +89,6 @@ class Plants extends Component {
             </div>
           </div>
         </div>
-        <footer className="plants_footer">
-          <h3>Come Visit Us</h3>
-        </footer>
       </div>
     );
   }

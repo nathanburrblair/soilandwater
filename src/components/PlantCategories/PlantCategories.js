@@ -185,7 +185,7 @@ class PlantCategories extends Component {
 
     return (
       <div className="mainBody">
-        <div className="content_container">
+        <div className="categories_content_container">
           <div className="category_intro">
             <h2>
               {this.props.match.params.category.charAt(0).toUpperCase() +
@@ -199,7 +199,7 @@ class PlantCategories extends Component {
             </p>
           </div>
           <div className="list">{listOfThings}</div>
-          <div className="add-plant">
+          <div className="add_plant">
             {this.state.addToggle ? (
               <div>
                 <input
@@ -269,9 +269,6 @@ class PlantCategories extends Component {
             )}
           </div>
         </div>
-        <footer className="plant_categories_footer">
-          <h3>Come Visit Us</h3>
-        </footer>
       </div>
     );
   }

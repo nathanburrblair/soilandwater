@@ -42,6 +42,10 @@ class ProductPage extends Component {
     });
   }
 
+  handleAddToCart () {
+    // Add to cart
+  }
+
   render() {
     //auto-resizes the text area
     document.addEventListener(
@@ -70,51 +74,49 @@ class ProductPage extends Component {
 
     let singleProduct = this.state.product.map((prod, i) => {
       return (
-        <div className="outer_product">
-        <div className="single_product">
-          {this.state.editToggle ? (
-            <div className="editing_product">
-              <img className="prod_image" src={prod.product_image} alt="" />
-              <div>
-                <input
-                  className="prod_name"
-                  type="text"
-                  defaultValue={prod.name}
-                />
-              </div>
-              <div>
-                <input
-                  className="prod_price"
-                  type="text"
-                  defaultValue={prod.price}
-                />
-              </div>
-              <div>
-                <textarea
-                  className="prod_description"
-                  type="text"
-                  defaultValue={prod.product_description}
-                />
-              </div>
-              <button onClick={this.handleConfirmDetails}>Confirm</button>
-            </div>
-          ) : (
-            <div className="not_editing_product">
-              <div className="image_container">
+        <div key={i} className="outer_product">
+          <div className="single_product">
+            {this.state.editToggle ? (
+              <div className="editing_product">
                 <img className="prod_image" src={prod.product_image} alt="" />
+                <div>
+                  <input
+                    className="prod_name"
+                    type="text"
+                    defaultValue={prod.name}
+                  />
+                </div>
+                <div>
+                  <input
+                    className="prod_price"
+                    type="text"
+                    defaultValue={prod.price}
+                  />
+                </div>
+                <div>
+                  <textarea
+                    className="prod_description"
+                    type="text"
+                    defaultValue={prod.product_description}
+                  />
+                </div>
+                <button onClick={this.handleConfirmDetails}>Confirm</button>
               </div>
-              <div className="info_container">
-                <h1>{prod.name}</h1>
-                <h3>${prod.price}</h3>
-                <p>{prod.product_description}</p>
-                <button onClick={this.handleEditToggle}>Edit</button>
+            ) : (
+              <div className="not_editing_product">
+                <div className="image_container">
+                  <img className="prod_image" src={prod.product_image} alt="" />
+                </div>
+                <div className="info_container">
+                  <h1>{prod.name}</h1>
+                  <h3>${prod.price}</h3>
+                  <p>{prod.product_description}</p>
+                  <button onClick={this.handleAddToCart}>Add to Cart</button>
+                  <button onClick={this.handleEditToggle}>Edit</button>
+                </div>
               </div>
-            </div>
-          )}
-          <footer className="product_page_footer">
-          <h3>Come Visit Us</h3>
-        </footer>
-        </div>
+            )}
+          </div>
         </div>
       );
     });

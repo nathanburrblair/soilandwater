@@ -10,9 +10,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
+  min-height: 100%;
   padding-top: 11vh;
-  padding-bottom: 260px;
+  padding-bottom: 60px;
 }
 
 .editing_product {
@@ -93,20 +93,6 @@ textarea {
   margin: 20px;
   padding: 10px;
   border: 1px solid gray;
-}
-
-.product_page_footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 200px;
-  background-color: #171717;
-  color: #f2f2f2;
-  width: 100%;
-  margin-top: 60px;
-  position: absolute;
-  bottom: 0;
 }
 
 @media (min-width: 600px) {
