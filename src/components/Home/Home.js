@@ -1,65 +1,28 @@
 import React, { Component } from "react";
 import "./Home.css";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import plantsbg from "../../images/plantsbg.jpg";
 import containerbg from "../../images/containerbgdr.jpg";
 import designbg from "../../images/designbg1.jpg";
 import { Link } from "react-router-dom";
 
 const Title = styled.h1`
-  font-size: 48px;
+  font-size: 34px;
   font-family: "Krona One", sans-serif;
   color: #353535;
   margin-top: 80px;
   z-index: 3;
 
-  @media (max-width: 500px) {
-    font-size: 34px;
+  @media (min-width: 500px) {
+    font-size: 48px;
   }
 
   @media (min-width: 1000px) {
     margin: 60% 0 50% 0;
     color: #f2f2f2;
+    text-shadow: 0px 0px 50px #656565;
+    font-size: 78px;
   }
-`;
-
-const SlideIn = keyframes`
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
-
-const PlantsSubtitle = styled.h2`
-  animation: ${SlideIn} 2s;
-  font-size: 34px;
-  font-family: "Krona One", sans-serif;
-  color: #f2f2f2;
-  text-transform: uppercase;
-  margin-top: 0px;
-  animation-duration: 1s;
-  animation-name: slidein;
-`;
-
-const ContainersSubtitle = styled.h2`
-  font-size: 34px;
-  font-family: "Krona One", sans-serif;
-  color: #f2f2f2;
-  text-transform: uppercase;
-  margin-top: 0px;
-`;
-
-const DesignSubtitle = styled.h2`
-  font-size: 34px;
-  font-family: "Krona One", sans-serif;
-  color: #353535;
-  text-transform: uppercase;
-  margin-top: 0px;
 `;
 
 const SectionTwoContainer = styled.section`
@@ -213,8 +176,8 @@ class Home extends Component {
       let offset = window.pageYOffset;
       parallax.style.backgroundPositionY = offset * 0.7 + "px";
     });
-    
-    // This makes the subtitles animate 
+
+    // This makes the subtitles animate
     const movingWords = document.querySelectorAll(".moving_subtitle");
 
     const options = {
@@ -254,7 +217,9 @@ class Home extends Component {
             </div>
             <SectionTwoContainer>
               <SectionTwo>
-                <h2 className="moving_subtitle">Plants</h2>
+                <div className="moving_subtitle">
+                  <h2>Plants</h2>
+                </div>
                 <p>
                   We’ve scoured the globe to find the best of the best. Come to
                   our shop and you’ll find the best plants the earth has to
@@ -270,7 +235,9 @@ class Home extends Component {
             <SectionFourContainer>
               <SectionFourEmpty />
               <SectionFour>
-                <h2 className="moving_subtitle">Design</h2>
+                <div className="moving_subtitle">
+                  <h2 className="design_h2">Design</h2>
+                </div>
                 <p>
                   When you come to the shop and purchase a plant and pot, we’ll
                   pot it for you. We’ll also come to your home to design your
@@ -283,7 +250,9 @@ class Home extends Component {
             </SectionFourContainer>
             <SectionThreeContainer>
               <SectionThree>
-                <h2 className="moving_subtitle">Containers</h2>
+                <div className="moving_subtitle">
+                  <h2>Containers</h2>
+                </div>
                 <p>
                   Your plants are only as good as their containers. We have
                   containers unlike any you’ll find elsewhere. Come in and see.

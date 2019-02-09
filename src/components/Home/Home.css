@@ -16,7 +16,7 @@
 }
 
 #layer {
-  background-color: rgba(73, 73, 73, 0.7);
+  background-color: rgba(151, 151, 151, 0.2);
   position: absolute;
   top: 0;
   left: 0;
@@ -25,36 +25,32 @@
   height: 90vh;
 }
 
-.moving_subtitle {
+.moving_subtitle h2{
   animation-duration: 1s;
   animation-name: slidein;
   font-size: 34px;
   font-family: "Krona One", sans-serif;
-  color: #F2F2F2;
+  color: #f2f2f2;
   text-transform: uppercase;
-  margin-top: 0px;
+  margin-top: 8px;
 }
 
-.dark_subtitle {
-  animation-duration: 1s;
-  animation-name: slidein;
-  font-size: 34px;
-  font-family: "Krona One", sans-serif;
+.moving_subtitle .design_h2 {
   color: black;
-  text-transform: uppercase;
-  margin-top: 0px;
+  font-size: 34px;
+  margin-top: 4px;
 }
 
 @keyframes slidein {
-	0% {
-		opacity: 0;
-		transform: translateY(30px);
-	}
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
 
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 1000px) {

@@ -20,6 +20,27 @@ class Plants extends Component {
         allPlants: res.data
       })
     );
+    const movingWords = document.querySelectorAll(".plant_subtitle");
+
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.0
+    };
+
+    let observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.intersectionRatio > 0) {
+          entry.target.classList.add("plant_subtitle");
+        } else {
+          entry.target.classList.remove("plant_subtitle");
+        }
+      });
+    }, options);
+
+    movingWords.forEach(word => {
+      observer.observe(word);
+    });
   }
 
   render() {
@@ -45,9 +66,11 @@ class Plants extends Component {
             <div className="orchid">
               <div className="orchid_overlay" />
               <div className="orchid_text">
-                <Link to="/plants/orchid">
-                  <h2>Orchids</h2>
-                </Link>
+                <div className="plant_subtitle">
+                  <Link to="/plants/orchid">
+                    <h2>Orchids</h2>
+                  </Link>
+                </div>
                 <p>
                   We only sell the most beautiful orchids in the world. Your jaw
                   will drop to the floor when you see our orchids.
@@ -60,9 +83,11 @@ class Plants extends Component {
             <div className="succulent">
               <div className="succulent_overlay" />
               <div className="succulent_text">
-                <Link to="/plants/succulent">
-                  <h2>Succulents</h2>
-                </Link>
+                <div className="plant_subtitle">
+                  <Link to="/plants/succulent">
+                    <h2>Succulents</h2>
+                  </Link>
+                </div>
                 <p>
                   We only sell the most beautiful succulents in the world. Your
                   jaw will drop to the floor when you see our succulents.
@@ -75,9 +100,11 @@ class Plants extends Component {
             <div className="bonsai">
               <div className="bonsai_overlay" />
               <div className="bonsai_text">
-                <Link to="/plants/bonsai">
-                  <h2>Bonsai</h2>
-                </Link>
+                <div className="plant_subtitle">
+                  <Link to="/plants/bonsai">
+                    <h2>Bonsai</h2>
+                  </Link>
+                </div>
                 <p>
                   We only sell the most beautiful bonsai trees in the world.
                   Your jaw will drop to the floor when you see our bonsai trees.
