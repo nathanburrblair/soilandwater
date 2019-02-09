@@ -56,5 +56,10 @@ module.exports = {
     .then(response => {
         res.status(200).send(response)
     })
+  }, 
+
+  addToCart: (req, res) => {
+    const db = req.app.get("db")
+    
   }
 };

@@ -25,6 +25,38 @@
   height: 90vh;
 }
 
+.moving_subtitle {
+  animation-duration: 1s;
+  animation-name: slidein;
+  font-size: 34px;
+  font-family: "Krona One", sans-serif;
+  color: #F2F2F2;
+  text-transform: uppercase;
+  margin-top: 0px;
+}
+
+.dark_subtitle {
+  animation-duration: 1s;
+  animation-name: slidein;
+  font-size: 34px;
+  font-family: "Krona One", sans-serif;
+  color: black;
+  text-transform: uppercase;
+  margin-top: 0px;
+}
+
+@keyframes slidein {
+	0% {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
 @media (max-width: 1000px) {
   #layer {
     background-color: transparent;

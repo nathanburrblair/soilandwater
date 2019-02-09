@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Home.css";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import plantsbg from "../../images/plantsbg.jpg";
 import containerbg from "../../images/containerbgdr.jpg";
 import designbg from "../../images/designbg1.jpg";
@@ -23,12 +23,27 @@ const Title = styled.h1`
   }
 `;
 
+const SlideIn = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
 const PlantsSubtitle = styled.h2`
+  animation: ${SlideIn} 2s;
   font-size: 34px;
   font-family: "Krona One", sans-serif;
   color: #f2f2f2;
   text-transform: uppercase;
   margin-top: 0px;
+  animation-duration: 1s;
+  animation-name: slidein;
 `;
 
 const ContainersSubtitle = styled.h2`
@@ -198,7 +213,32 @@ class Home extends Component {
       let offset = window.pageYOffset;
       parallax.style.backgroundPositionY = offset * 0.7 + "px";
     });
+    
+    // This makes the subtitles animate 
+    const movingWords = document.querySelectorAll(".moving_subtitle");
+
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.0
+    };
+
+    let observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.intersectionRatio > 0) {
+          entry.target.classList.add("moving_subtitle");
+        } else {
+          entry.target.classList.remove("moving_subtitle");
+        }
+      });
+    }, options);
+
+    movingWords.forEach(word => {
+      observer.observe(word);
+    });
+    // End animate subtitles
   }
+
   render() {
     return (
       <div id="master_container">
@@ -214,7 +254,7 @@ class Home extends Component {
             </div>
             <SectionTwoContainer>
               <SectionTwo>
-                <PlantsSubtitle>Plants</PlantsSubtitle>
+                <h2 className="moving_subtitle">Plants</h2>
                 <p>
                   We’ve scoured the globe to find the best of the best. Come to
                   our shop and you’ll find the best plants the earth has to
@@ -230,7 +270,7 @@ class Home extends Component {
             <SectionFourContainer>
               <SectionFourEmpty />
               <SectionFour>
-                <DesignSubtitle>Design</DesignSubtitle>
+                <h2 className="moving_subtitle">Design</h2>
                 <p>
                   When you come to the shop and purchase a plant and pot, we’ll
                   pot it for you. We’ll also come to your home to design your
@@ -243,7 +283,7 @@ class Home extends Component {
             </SectionFourContainer>
             <SectionThreeContainer>
               <SectionThree>
-                <ContainersSubtitle>Containers</ContainersSubtitle>
+                <h2 className="moving_subtitle">Containers</h2>
                 <p>
                   Your plants are only as good as their containers. We have
                   containers unlike any you’ll find elsewhere. Come in and see.
