@@ -24,7 +24,7 @@
   line-height: 24px;
 }
 
-.plant_intro h2 {
+.plant_intro h1 {
   font-family: "Krona One", sans-serif;
   text-transform: uppercase;
   font-size: 20px;
@@ -66,7 +66,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url(../../images/orchidbgrsz.jpg);
+  background-image: url(../../../images/orchidbgrsz.jpg);
   background-size: cover;
   height: 400px;
   width: auto;
@@ -118,7 +118,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url(../../images/plants2rsdk.jpg);
+  background-image: url(../../../images/plants2rsdk.jpg);
   background-size: cover;
   height: 400px;
   padding: 60px 0 60px 0;
@@ -168,7 +168,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url(../../images/bonsaibgdrs.jpg);
+  background-image: url(../../../images/bonsaibgdrs.jpg);
   background-size: cover;
   height: 400px;
   padding: 60px 0 60px 0;

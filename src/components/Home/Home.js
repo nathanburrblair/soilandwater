@@ -160,7 +160,7 @@ const Button = styled.button`
   }
 
   :active {
-    transform: scale(1.1);
+    transform: scale(1.05);
     outline: 0;
   }
 
@@ -218,7 +218,7 @@ class Home extends Component {
             <SectionTwoContainer>
               <SectionTwo>
                 <div className="moving_subtitle">
-                  <h2>Plants</h2>
+                  <Link to="/plants"><h2>Plants</h2></Link>
                 </div>
                 <p>
                   We’ve scoured the globe to find the best of the best. Come to
@@ -236,7 +236,7 @@ class Home extends Component {
               <SectionFourEmpty />
               <SectionFour>
                 <div className="moving_subtitle">
-                  <h2 className="design_h2">Design</h2>
+                  <Link to="/design"><h2 className="design_h2">Design</h2></Link>
                 </div>
                 <p>
                   When you come to the shop and purchase a plant and pot, we’ll
@@ -251,7 +251,7 @@ class Home extends Component {
             <SectionThreeContainer>
               <SectionThree>
                 <div className="moving_subtitle">
-                  <h2>Containers</h2>
+                  <Link to="/containers"><h2>Containers</h2></Link>
                 </div>
                 <p>
                   Your plants are only as good as their containers. We have

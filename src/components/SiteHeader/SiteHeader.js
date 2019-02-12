@@ -17,17 +17,27 @@ const Header = styled.header`
   position: absolute;
   display: block;
   width: 100%;
-  height: 10vh;
+  height: 90px;
   z-index: 4;
+
+  @media (min-width: 1000px) {
+    height: 120px;
+  }
 `;
 
 const Title = styled.h1`
   font-size: 16px;
   color: #131313;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  /* margin-top: 0px;
+  margin-bottom: 0px; */
+  margin: 0 0 0 0;
   font-family: "Krona One", sans-serif;
   text-align: left;
+
+  :hover {
+    transform: scale(1.1);
+    transition: .25s;
+  }
 `;
 
 class SiteHeader extends Component {
@@ -62,7 +72,7 @@ class SiteHeader extends Component {
               onClick={this.handleNavClick}
               alt=""
             />
-            <ul className="desktop_menu">
+            {/* <ul className="desktop_menu">
               <li className="dropdown">
                 <span>Plants</span>
                 <ul className="about_menu">
@@ -73,7 +83,7 @@ class SiteHeader extends Component {
               </li>
               <li>Containers</li>
               <li>Design</li>
-            </ul>
+            </ul> */}
           </div>
         </Header>
 

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Axios from "axios";
-import ProductCard from "../ProductCard/ProductCard";
-import "./PlantCategories.css";
+import DesignCard from "../DesignCard/DesignCard"
+import "./DesignCategories.css";
 import Dropzone from "react-dropzone";
 
 //For dropzone image preview
@@ -64,71 +64,71 @@ const rejectStyle = {
 };
 //end dropzone image preview
 
-class PlantCategories extends Component {
+class DesignCategories extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      products: [],
+      designProducts: [],
       addToggle: false,
-      plantName: "",
-      plantPrice: 0,
-      plantDescription: "",
-      plantCategory: this.props.match.params.category,
+      designName: "",
+      designPrice: 0,
+      designDescription: "",
+      designCategory: this.props.match.params.category,
       category: null,
-      plantPicture: "",
+      designPicture: "",
       files: []
     };
 
-    this.handleAddPlant = this.handleAddPlant.bind(this);
-    this.handlePlantName = this.handlePlantName.bind(this);
-    this.handlePlantPrice = this.handlePlantPrice.bind(this);
-    this.handlePlantDescription = this.handlePlantDescription.bind(this);
-    this.handleAddPlantToDB = this.handleAddPlantToDB.bind(this);
+    this.handleAddDesign = this.handleAddDesign.bind(this);
+    this.handleDesignName = this.handleDesignName.bind(this);
+    this.handleDesignPrice = this.handleDesignPrice.bind(this);
+    this.handleDesignDescription = this.handleDesignDescription.bind(this);
+    this.handleAddDesignToDB = this.handleAddDesignToDB.bind(this);
   }
   componentDidMount() {
-    Axios.get(`/api/plants/${this.props.match.params.category}`).then(
+    Axios.get(`/api/design/${this.props.match.params.category}`).then(
       response => {
         this.setState({
-          products: response.data
+          designProducts: response.data
         });
       }
     );
   }
 
-  handleAddPlant() {
+  handleAddDesign() {
     this.setState({
       addToggle: true
     });
   }
 
-  handlePlantName(e) {
+  handleDesignName(e) {
     this.setState({
-      plantName: e.target.value
+      designName: e.target.value
     });
   }
 
-  handlePlantPrice(e) {
+  handleDesignPrice(e) {
     this.setState({
-      plantPrice: e.target.value
+      designPrice: e.target.value
     });
   }
 
-  handlePlantDescription(e) {
+  handleDesignDescription(e) {
     this.setState({
-      plantDescription: e.target.value
+      designDescription: e.target.value
     });
   }
 
-  handleAddPlantToDB() {
-    Axios.post(`/api/plants/${this.props.match.params.category}`, {
-      name: this.state.plantName,
-      price: this.state.plantPrice,
-      product_description: this.state.plantDescription,
-      product_category: this.state.plantCategory,
-      product_image: this.state.plantPicture
+  handleAddDesignToDB() {
+    Axios.post(`/api/design/${this.props.match.params.category}`, {
+      name: this.state.designName,
+      price: this.state.designPrice,
+      product_description: this.state.designDescription,
+      product_category: this.state.designCategory,
+      product_image: this.state.designPicture
     }).then(response => {
-      this.props.history.push(`/plants/${this.props.match.params.category}`);
+      this.props.history.push(`/design/${this.props.match.params.category}`);
       window.location.reload();
     });
   }
@@ -148,9 +148,8 @@ class PlantCategories extends Component {
     formData.append("timestamp", (Date.now() / 1000) | 0);
 
     Axios.post(`${REACT_APP_CLOUDINARY_URL}`, formData).then(res => {
-      console.log("Hello");
       this.setState({
-        plantPicture: res.data.secure_url,
+        designPicture: res.data.secure_url,
         files: files.map(file =>
           Object.assign(file, {
             preview: URL.createObjectURL(file)
@@ -167,10 +166,9 @@ class PlantCategories extends Component {
 
   render() {
     console.log("match params", this.props.match.params);
-    console.log("state", this.state);
 
     const { files } = this.state;
-
+    
     const thumbs = files.map(file => (
       <div style={thumb} key={file.name}>
         <div style={thumbInner}>
@@ -178,42 +176,42 @@ class PlantCategories extends Component {
         </div>
       </div>
     ));
-
-    let listOfThings = this.state.products.map((product, i) => {
-      return <ProductCard key={i} product={product} />;
+    
+    let listOfDesignThings = this.state.designProducts.map((product, i) => {
+      return <DesignCard key={i} product={product} />;
     });
-
+    
     return (
       <div className="mainBody">
         <div className="categories_content_container">
           <div className="category_intro">
-            <h2>
+            <h1>
               {this.props.match.params.category.charAt(0).toUpperCase() +
                 this.props.match.params.category.slice(1) +
                 "S"}{" "}
               You'll Love
-            </h2>
+            </h1>
             <p>
-              This is an intro paragraph that says what amazing plants we have
-              at our store. It encourages you to browse and buy plants.
+              This is an intro paragraph that says what amazing ***** we have
+              at our store. It encourages you to browse and buy ****.
             </p>
           </div>
-          <div className="list">{listOfThings}</div>
-          <div className="add_plant">
+          <div className="list">{listOfDesignThings}</div>
+          <div className="add_design">
             {this.state.addToggle ? (
               <div>
                 <input
-                  onChange={this.handlePlantName}
-                  placeholder="Plant Name"
+                  onChange={this.handleDesignName}
+                  placeholder="Design Name"
                   type="text"
                 />
                 <input
-                  onChange={this.handlePlantPrice}
+                  onChange={this.handleDesignPrice}
                   placeholder="Price"
                   type="text"
                 />
                 <input
-                  onChange={this.handlePlantDescription}
+                  onChange={this.handleDesignDescription}
                   placeholder="Description"
                   type="text"
                 />
@@ -257,14 +255,14 @@ class PlantCategories extends Component {
                   }}
                 </Dropzone>
 
-                <button onClick={this.handleAddPlantToDB}>Add Plant</button>
+                <button onClick={this.handleAddDesignToDB}>Add Design</button>
               </div>
             ) : (
               <button
-                className="add_plant_button"
-                onClick={this.handleAddPlant}
+                className="add_design_button"
+                onClick={this.handleAddDesign}
               >
-                Add A Plant
+                Add A Design
               </button>
             )}
           </div>
@@ -274,4 +272,4 @@ class PlantCategories extends Component {
   }
 }
 
-export default PlantCategories;
+export default DesignCategories;

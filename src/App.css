@@ -22,6 +22,14 @@
   color: #61dafb;
 }
 
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

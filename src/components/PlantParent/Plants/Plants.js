@@ -56,7 +56,7 @@ class Plants extends Component {
         {/* <div className="all_plant_list">{displayAllPlants}</div> */}
         <div className="plants_content_container">
           <div className="plant_intro">
-            <h2>Plants You'll Love</h2>
+            <h1>Plants You'll Love</h1>
             <p>
               This is an intro paragraph that says what amazing plants we have
               at our store. It encourages you to browse and buy plants.
