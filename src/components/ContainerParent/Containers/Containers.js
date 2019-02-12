@@ -32,10 +32,9 @@ class Containers extends Component {
       <div className="container_container">
         <div className="containers_content_container">
           <div className="container_intro">
-            <h1>Containers You'll Love</h1>
+            <h1>Containers To Love</h1>
             <p>
-              This is an intro paragraph that says what amazing containers we
-              have at our store. It encourages you to browse and buy containers.
+              The perfect plant belongs inside an equally impressive container. We select only the finest handcrafted containers so you'll want to proudly put them on display. Browse our online store or come see us in person to talk with one of our professionals.
             </p>
           </div>
           <div className="sub_categories">
@@ -44,16 +43,30 @@ class Containers extends Component {
               <div className="terracotta_text">
                 <div className="container_subtitle">
                   <Link to="/containers/terracotta">
-                    <h2>Terra Cotta</h2>
+                    <h2>Terracotta</h2>
                   </Link>
                 </div>
                 <p>
-                  We only sell the most beautiful terra cotta containers in the
-                  world. Your jaw will drop to the floor when you see our terra
-                  cotta containers.
+                  Naturally beautiful terracotta is always a good choice for a container. Our impressive selection will meet any need, and look fabulous in the process.
                 </p>
                 <Link to="/containers/terracotta">
-                  <button>Shop Terra Cotta</button>
+                  <button>Shop Terracotta</button>
+                </Link>
+              </div>
+            </div>
+            <div className="concrete">
+              <div className="concrete_overlay" />
+              <div className="concrete_text">
+                <div className="container_subtitle">
+                  <Link to="/containers/concrete">
+                    <h2>Concrete</h2>
+                  </Link>
+                </div>
+                <p>
+                  Naturally beautiful terracotta is always a good choice for a container. Our impressive selection will meet any need, and look fabulous in the process.
+                </p>
+                <Link to="/containers/terracotta">
+                  <button>Shop Concrete</button>
                 </Link>
               </div>
             </div>

@@ -169,6 +169,32 @@ const Button = styled.button`
   }
 `;
 
+const DesignButton = styled.button`
+  width: auto;
+  height: 50px;
+  font-family: "Krona One", sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  background-color: #353535;
+  color: #F2F2F2;
+  border: none;
+  padding: 0 16px 0 16px;
+
+  :hover {
+    background-color: #979696;
+    cursor: pointer;
+  }
+
+  :active {
+    transform: scale(1.05);
+    outline: 0;
+  }
+
+  :focus {
+    outline: 0;
+  }
+`;
+
 class Home extends Component {
   componentDidMount() {
     const parallax = document.getElementById("soilWater");
@@ -239,12 +265,12 @@ class Home extends Component {
                   <Link to="/design"><h2 className="design_h2">Design</h2></Link>
                 </div>
                 <p>
-                  When you come to the shop and purchase a plant and pot, we’ll
-                  pot it for you. We’ll also come to your home to design your
+                  When you come to the shop to make a purchae, we’ll
+                  pot your plant for you. We’ll also come to your home to design your
                   space.
                 </p>
                 <Link to="/design">
-                  <Button>Learn Design</Button>
+                  <DesignButton>Learn Design</DesignButton>
                 </Link>
               </SectionFour>
             </SectionFourContainer>

@@ -4,7 +4,9 @@ import "./Staging.css";
 const Staging = () => {
   return (
     <div>
-      <h1>Staging Page Coming Soon</h1>
+      <div className="body">
+        <h2>Staging Page Coming Soon</h2>
+      </div>
     </div>
   );
 };

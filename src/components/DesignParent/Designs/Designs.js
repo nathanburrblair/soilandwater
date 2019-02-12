@@ -32,10 +32,9 @@ class Designs extends Component {
       <div className="design_container">
         <div className="design_content_container">
           <div className="design_intro">
-            <h1>Designs You'll Love</h1>
+            <h1>Designs To Love</h1>
             <p>
-              This is an intro paragraph that says what amazing ***** we
-              have at our store. It encourages you to browse and buy ******.
+              Whether you're preparing to sell, remodel, or just want a well thought out space, we're here to help. Not only will we come to your home or place of business to stage the space, we'll also take care of your plants on an ongoing basis. 
             </p>
           </div>
           <div className="sub_categories">
@@ -48,8 +47,8 @@ class Designs extends Component {
                   </Link>
                 </div>
                 <p>
-                  A paragraph about how we will come to you to take care of and water your plants so you don't have to.
-                </p>
+                  We will bring our expertise and experience to you, and together create a beautifully designed space. Service available for home, office, or anything in between.
+                  </p>
                 <Link to="/design/staging">
                   <button>Learn More</button>
                 </Link>
@@ -64,7 +63,7 @@ class Designs extends Component {
                   </Link>
                 </div>
                 <p>
-                  A paragraph about how we will come to you to take care of and water your plants so you don't have to.
+                  Let us take care of the ongoing maintenance your plants require. We'll send a team to your space every week to make sure your new green friends are thriving.
                 </p>
                 <Link to="/design/plant-care">
                   <button>Learn More</button>

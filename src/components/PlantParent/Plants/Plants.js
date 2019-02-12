@@ -56,10 +56,11 @@ class Plants extends Component {
         {/* <div className="all_plant_list">{displayAllPlants}</div> */}
         <div className="plants_content_container">
           <div className="plant_intro">
-            <h1>Plants You'll Love</h1>
+            <h1>Plants To Love</h1>
             <p>
-              This is an intro paragraph that says what amazing plants we have
-              at our store. It encourages you to browse and buy plants.
+              Live plants have the power to transform your space into something
+              better. Tour our online shop or come visit us in person. We'll set
+              you up with something just right.
             </p>
           </div>
           <div className="sub_categories">
@@ -72,8 +73,8 @@ class Plants extends Component {
                   </Link>
                 </div>
                 <p>
-                  We only sell the most beautiful orchids in the world. Your jaw
-                  will drop to the floor when you see our orchids.
+                  We only sell the most beautiful orchids in the world. We have
+                  an impressive breadth of selection, perfect for any space.
                 </p>
                 <Link to="/plants/orchid">
                   <button>Shop Orchids</button>
@@ -89,8 +90,7 @@ class Plants extends Component {
                   </Link>
                 </div>
                 <p>
-                  We only sell the most beautiful succulents in the world. Your
-                  jaw will drop to the floor when you see our succulents.
+                  Our selection of succulents is unrivaled. Come shop and chat with us for tips on how to care for these amazing little plants.
                 </p>
                 <Link to="/plants/succulent">
                   <button>Shop Succulents</button>
@@ -106,8 +106,7 @@ class Plants extends Component {
                   </Link>
                 </div>
                 <p>
-                  We only sell the most beautiful bonsai trees in the world.
-                  Your jaw will drop to the floor when you see our bonsai trees.
+                  Our selection of bonsai trees is matched only by our knowledge of how to care for them. Come in and we'll share what we know.
                 </p>
                 <Link to="/plants/bonsai">
                   <button>Shop Bonsai</button>
