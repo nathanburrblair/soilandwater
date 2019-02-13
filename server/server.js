@@ -4,10 +4,10 @@ const bodyParser = require("body-parser");
 const session = require("express-session");
 const massive = require("massive");
 const controller = require("./controller.js");
-// const path = require('path');
+const path = require('path');
 
 const app = express();
-app.use(express.static(`${__dirname}/../../build`));
+// app.use(express.static(`${__dirname}/../../build`));
 // app.use(express.static(path.join(__dirname, 'build')));
 
 app.use(bodyParser.json());
@@ -44,9 +44,9 @@ app.get("/api/design/:product_category/:id", controller.getDesignByCat)
 
 app.post("/api/plants/:product_category", controller.addPlant);
 
-// app.get('*', (req, res)=>{
-//   res.sendFile(path.join(__dirname, '../build/index.html'));
-// });
+app.get('*', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+});
 
 // app.get('/*', function(req, res) {
 //   res.sendFile(path.join(__dirname, 'build', 'index.html'));
