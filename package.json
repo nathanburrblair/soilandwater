@@ -32,7 +32,7 @@
     "eject": "react-scripts eject"
   },
   "main": "server/server.js",
-  "proxy": "process.env.REACT_APP_PROXY",
+  "proxy": "http://localhost:4900",
   "eslintConfig": {
     "extends": "react-app"
   },
