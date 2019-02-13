@@ -6,8 +6,10 @@ const massive = require("massive");
 const controller = require("./controller.js");
 
 const app = express();
+app.use(express.static(`${__dirname}/../build`));
 
 app.use(bodyParser.json());
+
 
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
 
