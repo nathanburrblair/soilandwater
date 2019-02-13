@@ -197,7 +197,7 @@ class ContainerCategories extends Component {
             </p>
           </div>
           <div className="list">{listOfContainerThings}</div>
-          <div className="add_container">
+          {/* <div className="add_container">
             {this.state.addToggle ? (
               <div>
                 <input
@@ -265,7 +265,7 @@ class ContainerCategories extends Component {
                 Add A Container
               </button>
             )}
-          </div>
+          </div> */}
         </div>
       </div>
     );

@@ -199,7 +199,7 @@ class PlantCategories extends Component {
             </p>
           </div>
           <div className="list">{listOfThings}</div>
-          <div className="add_plant">
+          {/* <div className="add_plant">
             {this.state.addToggle ? (
               <div>
                 <input
@@ -267,7 +267,7 @@ class PlantCategories extends Component {
                 Add A Plant
               </button>
             )}
-          </div>
+          </div> */}
         </div>
       </div>
     );

@@ -112,7 +112,7 @@ class ContainerPage extends Component {
                   <h3>${prod.price}</h3>
                   <p>{prod.product_description}</p>
                   <button onClick={this.handleAddToCart}>Add to Cart</button>
-                  <button onClick={this.handleEditToggle}>Edit</button>
+                  {/* <button onClick={this.handleEditToggle}>Edit</button> */}
                 </div>
               </div>
             )}
