@@ -7,7 +7,7 @@ const controller = require("./controller.js");
 const path = require('path');
 
 const app = express();
-app.use(express.static(`${__dirname}/../build`));
+// app.use(express.static(`${__dirname}/../build`));
 
 app.use(bodyParser.json());
 
